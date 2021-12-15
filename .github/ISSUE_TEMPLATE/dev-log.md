@@ -1,7 +1,7 @@
 ---
 name: Dev-Log
 about: Dev-Log 일일회고
-title: "[Dev-Log]일일회고 yy/mm/dd"
+title: "[Dev-Log] 일일회고 yy/mm/dd #1"
 labels: ''
 assignees: ''
 
