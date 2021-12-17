@@ -4,6 +4,7 @@ import logo from "../src/images/logo.png";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import HeaderImage from "./pages/Main";
+import Footer from "./components/Footer";
 //import imgA from './images/testA.png';
 
 const Logo = styled.img`
@@ -24,33 +25,8 @@ function App() {
         <Logo src={logo} alt="로고" />
         <Nav />
       </div>
-      <HeaderImage></HeaderImage>
-      <footer>
-        <div>
-          <span>About Service</span>
-          <span>LegoMore</span>
-        </div>
-        <div>
-          <span>트위터로고넣기</span>
-          <span>페이스북로고넣기</span>
-          <span>구글로고넣기</span>
-          <span>인스타로고넣기</span>
-          <div>© Copyright 2021 Team Algoitsm All rights reserved</div>
-        </div>
-        <div>
-          <span>About Us</span>
-          <div>
-            <span>권상현</span>
-            <span>github로고넣기</span>
-            <span>김경훈</span>
-            <span>github로고넣기</span>
-            <span>김장겸</span>
-            <span>github로고넣기</span>
-            <span>오예림</span>
-            <span>github로고넣기</span>
-          </div>
-        </div>
-      </footer>
+      <HeaderImage />
+      <Footer />
     </div>
   );
 }

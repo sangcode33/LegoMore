@@ -1,0 +1,39 @@
+.main-footer {
+  background: #040738;
+  color: #fff;
+}
+.container-footer {
+  width: 100%;
+}
+
+.container-footer a {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+}
+
+.social img {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.git {
+  text-align: right;
+}
+
+.git a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+.git img {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+}
+
+.copyright {
+  text-align: center;
+}
