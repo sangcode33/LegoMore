@@ -15,5 +15,5 @@ module.exports = {
   // comments
   upload: require("./comments/upload"),
   delete: require("./comments/delete"),
-  modify: require("./comments/modify"),
+  comments: require("./comments/comments"),
 };
