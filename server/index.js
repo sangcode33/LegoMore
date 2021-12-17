@@ -25,6 +25,14 @@ app.post("/signup", controllers.signup);
 app.post("/signin", controllers.signin);
 app.post("/signout", controllers.signout);
 
+// Goods
+app.post("/:id", controllers.auth);
+app.get("/:id", controllers.auth);
+app.delete("/:id", controllers.auth);
+app.put("/:id", controllers.auth);
+
+// Comments
+
 module.exports = app.listen(port, () => {
   console.log(` Server is starting on ${port}`);
 });
