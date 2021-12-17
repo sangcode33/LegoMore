@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const GoodsList = styled.button`
   display: inline-flex;
@@ -43,8 +44,12 @@ export default function Header() {
     <div>
       <Headerpart>
         <GoodsList>goodslist</GoodsList>
-        <GoodsList>Login</GoodsList>
-        <GoodsList>Sign Up</GoodsList>
+        <Link to="/login">
+          <GoodsList>Login</GoodsList>
+        </Link>
+        <Link to="/signup">
+          <GoodsList>Sign Up</GoodsList>
+        </Link>
         <GoodsList>상품등록</GoodsList>
       </Headerpart>
     </div>
