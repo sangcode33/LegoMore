@@ -20,10 +20,21 @@ app.use(
 app.use(cookieParser());
 app.get("/:id", controllers.auth);
 app.delete("/:id", controllers.delete);
-app.put("/:id", controllers.put);
+app.put("/:id", controllers.modify);
 app.post("/signup", controllers.signup);
 app.post("/signin", controllers.signin);
 app.post("/signout", controllers.signout);
+
+// Goods
+app.post("upload", controllers.upload);
+app.get("/:id", controllers.goods);
+app.delete("/:id", controllers.delete);
+app.put("/:id", controllers.modify);
+
+// Comments
+app.get(":id", controllers.comments);
+app.post("upload", controllers.upload);
+app.delete(":id", controllers.delete);
 
 module.exports = app.listen(port, () => {
   console.log(` Server is starting on ${port}`);
