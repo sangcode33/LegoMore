@@ -1,21 +1,20 @@
-import Header from "../components/Header";
+import Header1 from "../components/Header1";
 import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+import LogoImage from "../components/Logo";
 
 const Signup = () => {
   return (
     <div>
-      <Header />
+      <Header1 />
+      <LogoImage />
       <Nav />
       <div className="signup-main">
         <div>회원가입</div>
         <input placeholder="email"></input>
         <input placeholder="password"></input>
-        <input placeholder="Nicname"></input>
+        <input placeholder="Nickname"></input>
         <button>회원가입</button>
       </div>
-
-      <Footer />
     </div>
   );
 };

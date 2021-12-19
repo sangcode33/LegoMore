@@ -1,23 +1,20 @@
-import Header from "../components/Header";
+import Header1 from "../components/Header1";
 import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+import LogoImage from "../components/Logo";
 
 const Login = () => {
   return (
     <div>
-      <Header />
+      <Header1 />
+      <LogoImage />
       <Nav />
-
       <div className="login-main">
         <div>로그인</div>
         <input placeholder="email"></input>
         <input placeholder="password"></input>
         <button>로그인</button>
       </div>
-
       <button>Kakao</button>
-
-      <Footer />
     </div>
   );
 };
