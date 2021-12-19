@@ -43,14 +43,18 @@ export default function Header() {
   return (
     <div>
       <Headerpart>
-        <GoodsList>goodslist</GoodsList>
+        <Link to="/goods/goods">
+          <GoodsList>goodslist</GoodsList>
+        </Link>
         <Link to="/login">
           <GoodsList>Login</GoodsList>
         </Link>
         <Link to="/signup">
           <GoodsList>Sign Up</GoodsList>
         </Link>
-        <GoodsList>상품등록</GoodsList>
+        <Link to="/goods/upload">
+          <GoodsList>상품등록</GoodsList>
+        </Link>
       </Headerpart>
     </div>
   );
