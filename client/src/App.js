@@ -1,9 +1,8 @@
 import "./App.css";
-import styled from "styled-components";
-import logo from "../src/images/logo.png";
 import Header1 from "./components/Header1";
 import Header2 from "./components/Header2";
 import Nav from "./components/Nav";
+import LogoImage from "./components/Logo";
 import HeaderImage from "./pages/Main";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
@@ -11,14 +10,10 @@ import MyPage from "./pages/Mypage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
 import Signup from "./pages/Signup";
+import Upload from "./pages/Upload";
+import List from "./pages/List";
 
 //import imgA from './images/testA.png';
-
-const Logo = styled.img`
-  height: 90px;
-  display: block;
-  margin: 0 auto;
-`;
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -32,14 +27,14 @@ function App() {
               isLogin ? (
                 <>
                   <Header2 />
-                  <Logo src={logo} alt="logo" />
+                  <LogoImage />
                   <Nav />
                   <HeaderImage />
                 </>
               ) : (
                 <>
                   <Header1 />
-                  <Logo src={logo} alt="logo" />
+                  <LogoImage />
                   <Nav />
                   <HeaderImage />
                 </>
@@ -49,6 +44,8 @@ function App() {
           <Route path="/mypage" element={<MyPage />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/goods/upload" element={<Upload />}></Route>
+          <Route path="/goods/goods" element={<List />}></Route>
         </Routes>
       </BrowserRouter>
       <Footer />
