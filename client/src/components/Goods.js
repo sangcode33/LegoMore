@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import mockupimage from "../mockup/1.png";
+import Detail from "../pages/Detail";
 
 const GoodsImg = styled.img`
   height: 90px;

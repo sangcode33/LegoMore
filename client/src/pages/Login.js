@@ -6,8 +6,8 @@ const Login = () => {
   return (
     <div>
       <Header1 />
-      <Nav />
       <LogoImage />
+      <Nav />
       <div className="login-main">
         <div>로그인</div>
         <input placeholder="email"></input>

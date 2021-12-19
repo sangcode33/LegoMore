@@ -7,8 +7,8 @@ const List = () => {
   return (
     <div>
       <Header1 />
-      <Nav />
       <LogoImage />
+      <Nav />
       <Goods />
       {/* 이걸 컴포넌트로 할 필요가 있을까? */}
       <div></div>
