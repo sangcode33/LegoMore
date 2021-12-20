@@ -1,10 +1,12 @@
 import Header1 from "../components/Header1";
 import Nav from "../components/Nav";
+import LogoImage from "../components/Logo";
 
 const Signup = () => {
   return (
     <div>
       <Header1 />
+      <LogoImage />
       <Nav />
       <div className="signup-main">
         <div>회원가입</div>

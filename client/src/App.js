@@ -42,6 +42,7 @@ function App() {
             }
           ></Route>
           <Route path="/mypage" element={<MyPage />}></Route>
+          {/* props줘야 */}
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/goods/upload" element={<Upload />}></Route>
