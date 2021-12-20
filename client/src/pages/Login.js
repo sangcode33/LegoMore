@@ -35,7 +35,7 @@ const Login = ({ handleResponseSuccess }) => {
     <div>
       <Header1 />
       <LogoImage />
-      <Nav />
+      {/* <Nav /> */}
       <hr />
       <div className="login-main">
         <h1 className="login-title">로그인</h1>

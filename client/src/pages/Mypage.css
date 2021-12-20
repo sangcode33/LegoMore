@@ -1,3 +1,53 @@
 .bottomline {
   border-bottom: 2px solid rgb(207, 204, 204);
 }
+/* .editbutton {
+  margin: 0px;
+} */
+.mypage {
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.myinfo-title {
+  color: #f24826;
+  font-size: 20px;
+  margin: 40px;
+  font-weight: bold;
+  background: white;
+}
+
+.myinfo input {
+  width: 20%;
+  height: 3em;
+  margin: 10px;
+  border: solid 2px #f24826;
+  border-radius: 8px;
+  color: #f24826;
+}
+
+.myinfo-nickname input {
+  width: 20%;
+  height: 3em;
+  margin: 10px;
+  border: solid 2px #f24826;
+  border-radius: 8px;
+  color: #f24826;
+}
+
+.editbutton button {
+  width: 5%;
+  height: 2em;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  color: #f24826;
+  background-color: #fff;
+  border-radius: 8px;
+  border: solid 2px #f24826;
+}
+
+/* .btn button:hover {
+  color: #ffcf00;
+} */
