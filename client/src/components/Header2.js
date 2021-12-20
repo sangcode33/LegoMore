@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Login from "../pages/Signup";
+import { Link } from "react-router-dom";
 
 const GoodsList = styled.button`
   display: inline-flex;
@@ -39,14 +39,18 @@ const Headerpart = styled.header`
   height: auto;
 `;
 
-export default function Header() {
+export default function Header(props) {
   return (
     <div>
       <Headerpart>
-        <GoodsList>goodslist</GoodsList>
-        <GoodsList>Log Out</GoodsList>
-        <GoodsList>My Page</GoodsList>
-        <GoodsList>상품등록</GoodsList>
+        <Link to="/goods/goods">
+          <GoodsList>goodslist</GoodsList>
+        </Link>
+        <GoodsList onClick={props.handleLogout}>Log Out</GoodsList>
+        <Link to="/users/mypage">
+          <GoodsList>My Page</GoodsList>
+        </Link>
+        {/* <GoodsList>상품등록</GoodsList> */}
       </Headerpart>
     </div>
   );

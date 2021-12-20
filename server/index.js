@@ -23,7 +23,7 @@ app.delete("/users/auth", controllers.delete);
 app.put("/users/auth", controllers.modify);
 app.post("/users/signup", controllers.signup);
 app.post("/users/signin", controllers.signin);
-app.post("/users/signout", controllers.signout);
+app.get("/users/signout", controllers.signout);
 
 // Goods
 app.post("/goods/upload", controllers.upload);
