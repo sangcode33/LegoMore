@@ -41,7 +41,7 @@ const Signup = () => {
       <Nav />
       <hr />
       <div className="signup-main">
-        <div>회원가입</div>
+        <h1>회원가입</h1>
         <div className="signup-email">
           <input
             type="email"
