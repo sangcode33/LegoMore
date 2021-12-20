@@ -1,6 +1,7 @@
 import Header1 from "../components/Header1";
 import Nav from "../components/Nav";
 import LogoImage from "../components/Logo";
+import "./Login.css";
 
 const Login = () => {
   return (
@@ -8,13 +9,27 @@ const Login = () => {
       <Header1 />
       <LogoImage />
       <Nav />
+      <hr />
       <div className="login-main">
-        <div>로그인</div>
-        <input placeholder="email"></input>
-        <input placeholder="password"></input>
-        <button>로그인</button>
+        <div className="login-title">로그인</div>
+
+        <div className="login-email">
+          <input type="text" placeholder="email"></input>
+        </div>
+        <div className="login-password">
+          <input type="password" placeholder="password"></input>
+        </div>
+
+        <div className="btn">
+          <button>로그인</button>
+        </div>
+
+        <hr />
+        <div className="sns-title">SNS 간편로그인</div>
+        <div className="btn-kakao">
+          <button> 카카오 로그인 →</button>
+        </div>
       </div>
-      <button>Kakao</button>
     </div>
   );
 };
