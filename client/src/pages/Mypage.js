@@ -8,7 +8,7 @@ const GoodsImg = styled.img`
   margin: 0 auto;
 `;
 
-export default function MyPage() {
+export default function MyPage(props) {
   return (
     //props로 가져오기. type적기
     <div>
@@ -16,13 +16,14 @@ export default function MyPage() {
         <div>정보수정</div>
         <input placeholder="email" type="email" readOnly></input>
         <div>
-          <input placeholder="nickname"></input>
+          <input type="text" placeholder="nickname"></input>
           <button>수정</button>
           <div>이미 사용중인 닉네임이 있습니다.</div>
         </div>
-        <input placeholder="current password"></input>
+
+        <input type="password" placeholder="current password"></input>
         <div>
-          <input placeholder="new password"></input>
+          <input type="password" placeholder="new password"></input>
           <button>수정</button>
         </div>
         <button>회원탈퇴</button>

@@ -11,30 +11,30 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: "*",
+    origin: "http://localhost:3000",
     credentials: true,
     methods: ["GET", "POST", "OPTION", "PUT"],
   })
 );
 
 app.use(cookieParser());
-app.get("/:id", controllers.auth);
-app.delete("/:id", controllers.delete);
-app.put("/:id", controllers.modify);
-app.post("/signup", controllers.signup);
-app.post("/signin", controllers.signin);
-app.post("/signout", controllers.signout);
+app.get("/users/auth", controllers.auth);
+app.delete("/users/auth", controllers.delete);
+app.put("/users/auth", controllers.modify);
+app.post("/users/signup", controllers.signup);
+app.post("/users/signin", controllers.signin);
+app.get("/users/signout", controllers.signout);
 
 // Goods
-app.post("upload", controllers.upload);
-app.get("/:id", controllers.goods);
-app.delete("/:id", controllers.delete);
-app.put("/:id", controllers.modify);
+app.post("/goods/upload", controllers.upload);
+app.get("/goods/goods-auth", controllers.goods);
+app.delete("/goods/goods-auth", controllers.delete);
+app.put("/goods/goods-auth", controllers.modify);
 
 // Comments
-app.get(":id", controllers.comments);
-app.post("upload", controllers.upload);
-app.delete(":id", controllers.delete);
+app.get("/comments/comments-auth", controllers.comments);
+app.post("/comments/upload", controllers.upload);
+app.delete("/comments/comments-auth", controllers.delete);
 
 module.exports = app.listen(port, () => {
   console.log(` Server is starting on ${port}`);

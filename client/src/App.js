@@ -6,47 +6,82 @@ import LogoImage from "./components/Logo";
 import HeaderImage from "./pages/Main";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
-import MyPage from "./pages/Mypage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MyPage from "./pages/Mypage.js";
+import Detail from "./pages/Detail.js";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import Signup from "./pages/Signup";
 import Upload from "./pages/Upload";
 import List from "./pages/List";
+import axios from "axios";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
+  const [userInfo, setUserInfo] = useState(null);
+  const navigate = useNavigate();
+  const isAuthenticated = () => {
+    axios
+      .get("http://localhost:4000/users/auth", {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setUserInfo(res.data.data.userInfo);
+        setIsLogin(true);
+        navigate("/");
+      });
+  };
+
+  const handleResponseSuccess = () => {
+    isAuthenticated();
+  };
+
+  const handleLogout = () => {
+    axios.get("http://localhost:4000/users/signout").then((res) => {
+      setUserInfo(null);
+      setIsLogin(false);
+      navigate("/");
+    });
+  };
+
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              isLogin ? (
-                <>
-                  <Header2 />
-                  <LogoImage />
-                  <Nav />
-                  <HeaderImage />
-                </>
-              ) : (
-                <>
-                  <Header1 />
-                  <LogoImage />
-                  <Nav />
-                  <HeaderImage />
-                </>
-              )
-            }
-          ></Route>
-          <Route path="/mypage" element={<MyPage />}></Route>
-          {/* props줘야 */}
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/signup" element={<Signup />}></Route>
-          <Route path="/goods/upload" element={<Upload />}></Route>
-          <Route path="/goods/goods" element={<List />}></Route>
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            isLogin ? (
+              <>
+                <Header2 handleLogout={handleLogout} />
+                <LogoImage />
+                <Nav />
+                <HeaderImage />
+              </>
+            ) : (
+              <>
+                <Header1 />
+                <LogoImage />
+                <Nav />
+                <HeaderImage />
+              </>
+            )
+          }
+        ></Route>
+
+        <Route
+          path="/users/mypage"
+          element={<MyPage userInfo={userInfo} />}
+        ></Route>
+
+        <Route path="/goods/detail" element={<Detail />}></Route>
+
+        <Route
+          path="/users/login"
+          element={<Login handleResponseSuccess={handleResponseSuccess} />}
+        ></Route>
+        <Route path="/users/signup" element={<Signup />}></Route>
+        <Route path="/goods/upload" element={<Upload />}></Route>
+        <Route path="/goods/goods" element={<List />}></Route>
+      </Routes>
       <Footer />
     </div>
   );

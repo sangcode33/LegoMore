@@ -84,10 +84,10 @@ export default function Header() {
         <Link to="/goods/goods">
           <GoodsList>goodslist</GoodsList>
         </Link>
-        <Link to="/login">
+        <Link to="/users/login">
           <GoodsList>Login</GoodsList>
         </Link>
-        <Link to="/signup">
+        <Link to="/users/signup">
           <GoodsList>Sign Up</GoodsList>
         </Link>
         <div>
