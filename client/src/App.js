@@ -13,8 +13,6 @@ import Signup from "./pages/Signup";
 import Upload from "./pages/Upload";
 import List from "./pages/List";
 
-//import imgA from './images/testA.png';
-
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   return (
@@ -42,7 +40,6 @@ function App() {
             }
           ></Route>
           <Route path="/mypage" element={<MyPage />}></Route>
-          {/* props줘야 */}
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/goods/upload" element={<Upload />}></Route>
