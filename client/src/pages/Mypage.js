@@ -32,6 +32,7 @@ export default function MyPage() {
         <span>내 찜목록</span>
 
         <div>
+          {/* map함수써서 가져오기 */}
           <GoodsImg src={mockupimage} alt="" />
           {/* src를 props로 가져와야*/}
           <ul>
@@ -51,7 +52,23 @@ export default function MyPage() {
 
       <div>
         <span>내가 올린 물품</span>
-        <Goods />
+        <div>
+          {/* map함수써서 가져오기 */}
+          <GoodsImg src={mockupimage} alt="" />
+          {/* src를 props로 가져와야*/}
+          <ul>
+            <li>
+              <span>상품</span>
+              <span>레고 해리포터</span>
+              {/* 상품이 뭔지 props로 받아서 가져와야한다 {props...}*/}
+            </li>
+            <li>
+              <span>가격</span>
+              <span>50,000</span>
+              {/* 가격을 props로 받아서 가져와야한다 props... */}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
