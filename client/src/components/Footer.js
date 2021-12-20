@@ -10,29 +10,43 @@ const Footer = function () {
   return (
     <div className="main-footer">
       <span className="social">
-        <img src={facebook} alt="" />
-        <img src={twitter} alt="" />
-        <img src={instar} alt="" />
-        <img src={naver} alt="" />
+        <a target="_blank" href={"https://www.facebook.com/"}>
+          <img src={facebook} alt="" />
+        </a>
+        <a target="_blank" href={"https://twitter.com/"}>
+          <img src={twitter} alt="" />
+        </a>
+        <a target="_blank" href={"https://www.instagram.com/"}>
+          <img src={instar} alt="" />
+        </a>
+        <a target="_blank" href={"https://www.naver.com/"}>
+          <img src={naver} alt="" />
+        </a>
       </span>
 
       <div className="container-footer">
         <div>About Service</div>
-        <a href="https://github.com/codestates/LegoMore">LegoMore</a>
+        <a target="_blank" href={"https://github.com/codestates/LegoMore"}>
+          LegoMore
+        </a>
+
+        {/* // <a target='_blank' href={'Your_url'})}>Your Text</a> */}
         <div className="git">
           <div className="name">About Us</div>
-          <a href="#">
+          <a target="_blank" href={"https://github.com/sangcode33"}>
             권상현 <img src={git} alt="" />
           </a>
+          <span>|</span>
 
-          <a href="#">
+          <a target="_blank" href={"https://github.com/gusdnvkfks/"}>
             김경훈 <img src={git} alt="" />
           </a>
           <br />
-          <a href="#">
+          <a target="_blank" href={"https://github.com/codedot21/"}>
             김장겸 <img src={git} alt="" />
           </a>
-          <a href="#">
+          <span>|</span>
+          <a target="_blank" href={"https://github.com/riaoh/"}>
             오예림 <img src={git} alt="" />
           </a>
         </div>

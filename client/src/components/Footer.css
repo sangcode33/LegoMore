@@ -1,9 +1,10 @@
 .main-footer {
   background: #040738;
   color: #fff;
+  width: 100%;
 }
 .container-footer {
-  width: 100%;
+  margin-left: 50px;
 }
 
 .container-footer a {
@@ -12,28 +13,47 @@
   text-align: center;
 }
 
+.social {
+  display: block;
+  text-align: center;
+}
+
 .social img {
   position: relative;
   width: 40px;
   height: 40px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 .git {
   text-align: right;
+  margin-right: 80px;
+  margin-bottom: 10px;
+}
+
+.name {
+  margin-right: 50px;
+  padding: 5px;
+  font-size: 20px;
 }
 
 .git a {
   text-decoration: none;
   color: #fff;
   font-size: 20px;
+  padding: 10px;
 }
 
 .git img {
   width: 15px;
   height: 15px;
   background: #fff;
+  box-shadow: 0 2px 2px 0;
 }
 
 .copyright {
   text-align: center;
+  padding-bottom: 20px;
 }

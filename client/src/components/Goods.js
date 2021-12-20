@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import mockupimage from "../mockup/1.png";
+import Detail from "../pages/Detail";
+import { Route, Link } from "react-router-dom";
 
 const GoodsImg = styled.img`
   height: 90px;
