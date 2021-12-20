@@ -16,7 +16,7 @@ const Login = () => {
     setLoginInfo({ ...loginInfo, [key]: e.target.value });
   };
 
-  const handleLogin = () => {
+  const handleSign = () => {
     if (loginInfo.email === "" || loginInfo.password === "") {
       setErrorMessage("이메일과 비밀번호를 입력하세요");
     } else {
@@ -27,36 +27,6 @@ const Login = () => {
     }
   };
 
-  //   return (
-  //     <div>
-  //       <Header1 />
-  //       <LogoImage />
-  //       <Nav />
-  //       <div className="login-main">
-  //         <h1>로그인</h1>
-  //         <form onSubmit={(e) => e.preventDefault()}>
-  //           <input
-  //             placeholder="email"
-  //             type="email"
-  //             onChange={handleInputValue("email")}
-  //           ></input>
-  //           <input
-  //             placeholder="password"
-  //             type="password"
-  //             onChange={handleInputValue("password")}
-  //           ></input>
-  //           <button type="submit" onClick={handleLogin}>
-  //             로그인
-  //           </button>
-  //           <div className="alert-box">{errorMessage}</div>
-  //         </form>
-  //       </div>
-  //       <button>Kakao</button>
-  //     </div>
-  //   );
-  // };
-
-  // export default Login;
   return (
     <div>
       <Header1 />
@@ -83,7 +53,7 @@ const Login = () => {
           </div>
 
           <div className="btn">
-            <button type="submit" onClick={handleLogin}>
+            <button type="submit" onClick={handleSign}>
               로그인
             </button>
             <div className="alert-box">{errorMessage}</div>

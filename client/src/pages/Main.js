@@ -25,8 +25,10 @@ const HeaderImage2 = styled.section`
 export default function headerImage() {
   return (
     <div>
-      <HeaderImage1 />
-      <HeaderImage2 />
+      <div>
+        <HeaderImage1 />
+        <HeaderImage2 />
+      </div>
     </div>
   );
 }

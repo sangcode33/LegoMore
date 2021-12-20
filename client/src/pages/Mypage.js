@@ -1,6 +1,6 @@
-import Goods from "../components/Goods";
 import styled from "styled-components";
 import mockupimage from "../mockup/1.png";
+import "./Mypage.css";
 
 const GoodsImg = styled.img`
   height: 90px;
@@ -10,16 +10,16 @@ const GoodsImg = styled.img`
 
 export default function MyPage() {
   return (
+    //props로 가져오기. type적기
     <div>
-      <div>
-        <span>정보수정</span>
-        <input placeholder="email"></input>
+      <div className="bottomline">
+        <div>정보수정</div>
+        <input placeholder="email" type="email" readOnly></input>
         <div>
           <input placeholder="nickname"></input>
           <button>수정</button>
           <div>이미 사용중인 닉네임이 있습니다.</div>
         </div>
-
         <input placeholder="current password"></input>
         <div>
           <input placeholder="new password"></input>
@@ -28,9 +28,8 @@ export default function MyPage() {
         <button>회원탈퇴</button>
       </div>
 
-      <div>
-        <span>내 찜목록</span>
-
+      <div className="bottomline">
+        <div>내 찜목록</div>
         <div>
           {/* map함수써서 가져오기 */}
           <GoodsImg src={mockupimage} alt="" />
@@ -50,8 +49,8 @@ export default function MyPage() {
         </div>
       </div>
 
-      <div>
-        <span>내가 올린 물품</span>
+      <div className="bottomline">
+        <div>내가 올린 물품</div>
         <div>
           {/* map함수써서 가져오기 */}
           <GoodsImg src={mockupimage} alt="" />

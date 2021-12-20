@@ -13,8 +13,6 @@ import Signup from "./pages/Signup";
 import Upload from "./pages/Upload";
 import List from "./pages/List";
 
-//import imgA from './images/testA.png';
-
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   return (

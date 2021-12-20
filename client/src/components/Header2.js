@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Login from "../pages/Signup";
 
 const GoodsList = styled.button`
   display: inline-flex;
