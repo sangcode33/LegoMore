@@ -4,11 +4,14 @@ import Nav from "../components/Nav";
 import mockupimage from "../mockup/1.png";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import "./List.css";
 
 const GoodsImg = styled.img`
-  height: 90px;
-  //display: block;
-  margin: 0 auto;
+  width: 210px;
+  height: 210px;
+  margin: 0.5rem;
+  border: 0.5px solid rgb(238, 238, 238);
+  object-fit: cover;
 `;
 
 const List = () => {
@@ -19,10 +22,10 @@ const List = () => {
       <LogoImage />
       <Nav />
       <div>
-        <div>레고 중고거래 매물</div>
+        <div className="list-title">레고 중고거래 매물</div>
 
         <Link to="/goods/detail">
-          <div>
+          <div className="item">
             <GoodsImg src={mockupimage} alt="" />
             {/* src를 props로 가져와야*/}
             <ul>
