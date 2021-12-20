@@ -64,6 +64,7 @@ function App() {
               )
             }
           ></Route>
+
           <Route
             path="/mypage"
             element={<MyPage userInfo={userInfo} />}

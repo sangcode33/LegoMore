@@ -10,7 +10,6 @@ const Logo = styled.img`
 
 export default function LogoImage() {
   const navigate = useNavigate();
-  // history가 useNavigate로 변경
 
   const goMainpage = () => {
     navigate("/");
