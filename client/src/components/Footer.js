@@ -36,6 +36,7 @@ const Footer = function () {
           <a target="_blank" href={"https://github.com/sangcode33"}>
             권상현 <img src={git} alt="" />
           </a>
+          <span>|</span>
 
           <a target="_blank" href={"https://github.com/gusdnvkfks/"}>
             김경훈 <img src={git} alt="" />
@@ -44,6 +45,7 @@ const Footer = function () {
           <a target="_blank" href={"https://github.com/codedot21/"}>
             김장겸 <img src={git} alt="" />
           </a>
+          <span>|</span>
           <a target="_blank" href={"https://github.com/riaoh/"}>
             오예림 <img src={git} alt="" />
           </a>

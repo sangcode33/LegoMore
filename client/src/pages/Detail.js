@@ -1,6 +1,5 @@
 import Header2 from "../components/Header1";
 import LogoImage from "../components/Logo";
-import Goods from "../components/Goods";
 import Nav from "../components/Nav";
 import React, { useState } from "react";
 import "./Detail.css";
@@ -12,16 +11,16 @@ const Detail = () => {
       <Header2 />
       <LogoImage />
       <Nav />
-      <Goods />
+
       {/* 이걸 컴포넌트로 할 필요가 있을까? */}
       <button>수정</button>
       <button>삭제</button>
 
       <input type="file" />
 
-      <input placeholder="제목" />
-      <input placeholder="가격" />
-      <input placeholder="상세설명" />
+      <div>제목</div>
+      <div>가격</div>
+      <div>상세설명</div>
 
       <button>찜하기</button>
       <button
