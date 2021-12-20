@@ -13,16 +13,16 @@ export default function MyPage() {
     <div>
       <div>
         <span>정보수정</span>
-        <input placeholder="email"></input>
+        <input type="email" placeholder="email"></input>
         <div>
-          <input placeholder="nickname"></input>
+          <input type="text" placeholder="nickname"></input>
           <button>수정</button>
           <div>이미 사용중인 닉네임이 있습니다.</div>
         </div>
 
-        <input placeholder="current password"></input>
+        <input type="password" placeholder="current password"></input>
         <div>
-          <input placeholder="new password"></input>
+          <input type="password" placeholder="new password"></input>
           <button>수정</button>
         </div>
         <button>회원탈퇴</button>

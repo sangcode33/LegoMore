@@ -6,7 +6,6 @@ import axios from "axios";
 import "./Login.css";
 
 const Login = ({ handleResponseSuccess }) => {
-
   const [loginInfo, setLoginInfo] = useState({
     email: "",
     password: "",
@@ -20,7 +19,7 @@ const Login = ({ handleResponseSuccess }) => {
 
   const handleSignin = () => {
     if (loginInfo.email === "" || loginInfo.password === "") {
-      alert("아이디와 비밀번호를 입력해 주세요");
+      setErrorMessage("아이디와 이메일을 입력해주세요.");
     } else {
       axios
         .post("http://localhost:4000/users/signin", loginInfo, {
@@ -33,7 +32,7 @@ const Login = ({ handleResponseSuccess }) => {
   };
 
   return (
-      <div>
+    <div>
       <Header1 />
       <LogoImage />
       <Nav />
@@ -58,7 +57,7 @@ const Login = ({ handleResponseSuccess }) => {
           </div>
 
           <div className="btn">
-            <button type="submit" onClick={handleLogin}>
+            <button type="submit" onClick={handleSignin}>
               로그인
             </button>
             <div className="alert-box">{errorMessage}</div>

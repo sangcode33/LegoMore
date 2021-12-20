@@ -1,6 +1,7 @@
 import Header1 from "../components/Header1";
 import Nav from "../components/Nav";
 import LogoImage from "../components/Logo";
+import "./Signup.css";
 import axios from "axios";
 import { useState } from "react";
 
@@ -38,18 +39,33 @@ const Signup = () => {
       <Header1 />
       <LogoImage />
       <Nav />
+      <hr />
       <div className="signup-main">
         <div>회원가입</div>
-        <input placeholder="email" onChange={handleInputValue("email")}></input>
-        <input
-          placeholder="password"
-          onChange={handleInputValue("password")}
-        ></input>
-        <input
-          placeholder="Nickname"
-          onChange={handleInputValue("nickname")}
-        ></input>
-        <button onClick={handleSignup}>회원가입</button>
+        <div className="signup-email">
+          <input
+            type="email"
+            placeholder="email"
+            onChange={handleInputValue("email")}
+          ></input>
+        </div>
+        <div className="signup-password">
+          <input
+            type="password"
+            placeholder="password"
+            onChange={handleInputValue("password")}
+          ></input>
+        </div>
+        <div className="signup-nickname">
+          <input
+            type="text"
+            placeholder="Nickname"
+            onChange={handleInputValue("nickname")}
+          ></input>
+        </div>
+        <div className="btn">
+          <button onClick={handleSignup}>회원가입</button>
+        </div>
       </div>
     </div>
   );
