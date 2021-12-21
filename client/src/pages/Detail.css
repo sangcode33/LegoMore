@@ -2,4 +2,63 @@
   margin-top: 20px;
   padding: 20px;
   background: #eee;
+  text-align: left;
+}
+
+.modal-delete {
+  border: 0px solid #eee;
+  float: right;
+}
+
+.modal input {
+  border: 0px solid #eee;
+  width: 500px;
+  height: 40px;
+}
+
+.modal-put button {
+  border: 0 solid;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.detail-main {
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.detail-delete {
+  text-align: right;
+  display: block;
+}
+
+.detail-title {
+  margin: 20px;
+  padding: 5px;
+  width: 20%;
+  height: 3em;
+  border: solid 2px #f24826;
+  border-radius: 8px;
+}
+
+.detail-love {
+  margin: 20px;
+  padding: 10px;
+}
+.detail-love button {
+  width: 15%;
+  height: 3em;
+  margin: 30px;
+  color: #f24826;
+  background-color: #fff;
+  border-radius: 8px;
+  border: solid 2px #f24826;
+}
+
+.detail-love button:hover {
+  box-shadow: 0 80px 0 0 #fceb3e inset;
+  font-weight: bold;
 }

@@ -3,7 +3,7 @@ const { isAuthorized } = require("../tokenFunctions");
 
 module.exports = (req, res) => {
   // console.log("서버 auth로 왔는지?");
-  console.log("req에 뭐가있냐? ", req);
+  // console.log("req에 뭐가있냐? ", req);
   const accessTokenData = isAuthorized(req);
   // console.log("server auth : ", accessTokenData);
 
