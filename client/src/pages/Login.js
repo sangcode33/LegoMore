@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import LogoImage from "../components/Logo";
 import axios from "axios";
 import "./Login.css";
+import { KAKAO_AUTH_URL } from "../components/OAuth";
 
 const Login = ({ handleResponseSuccess }) => {
   const [loginInfo, setLoginInfo] = useState({
@@ -64,8 +65,10 @@ const Login = ({ handleResponseSuccess }) => {
         withCredentials: true,
       })
       .then((res) => {
-        handleResponseSuccess();
-        alert("로그인에 성공하셨습니다");
+        // console.log(res);
+        // console.log("Login 69 : ", res.data.data.accessToken);
+        handleResponseSuccess(res.data.data.accessToken);
+        // alert("로그인에 성공하셨습니다");
       });
   };
 
@@ -104,7 +107,9 @@ const Login = ({ handleResponseSuccess }) => {
         <hr />
         <div className="sns-title">SNS 간편로그인</div>
         <div className="btn-kakao">
-          <button> 카카오 로그인 →</button>
+          <button>
+            <a href={KAKAO_AUTH_URL}> 카카오 로그인 → </a>
+          </button>
         </div>
       </div>
     </div>
