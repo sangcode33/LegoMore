@@ -6,8 +6,8 @@ import LogoImage from "./components/Logo";
 import HeaderImage from "./pages/Main";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
-import MyPage from "./pages/Mypage";
-import Detail from "./pages/Detail";
+import MyPage from "./pages/Mypage.js";
+import Detail from "./pages/Detail.js";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import Signup from "./pages/Signup";
@@ -24,16 +24,22 @@ function App() {
         withCredentials: true,
       })
       .then((res) => {
-        console.log("res : ", res);
         setUserInfo(res.data.data.userInfo);
         setIsLogin(true);
-        console.log(isLogin);
         navigate("/");
       });
   };
 
   const handleResponseSuccess = () => {
     isAuthenticated();
+  };
+
+  const handleLogout = () => {
+    axios.get("http://localhost:4000/users/signout").then((res) => {
+      setUserInfo(null);
+      setIsLogin(false);
+      navigate("/");
+    });
   };
 
   return (
@@ -44,7 +50,7 @@ function App() {
           element={
             isLogin ? (
               <>
-                <Header2 />
+                <Header2 handleLogout={handleLogout} />
                 <LogoImage />
                 <Nav />
                 <HeaderImage />
@@ -60,16 +66,20 @@ function App() {
           }
         ></Route>
 
-        <Route path="/mypage" element={<MyPage userInfo={userInfo} />}></Route>
-        <Route path="/goods/detail" element={<Detail />}></Route>
         <Route
-          path="/login"
+          path="/users/mypage"
+          element={<MyPage userInfo={userInfo} />}
+        ></Route>
+
+        <Route path="/goods/detail" element={<Detail />}></Route>
+
+        <Route
+          path="/users/login"
           element={<Login handleResponseSuccess={handleResponseSuccess} />}
         ></Route>
-        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/users/signup" element={<Signup />}></Route>
         <Route path="/goods/goods" element={<List />}></Route>
       </Routes>
-
       <Footer />
     </div>
   );

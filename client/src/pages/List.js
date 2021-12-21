@@ -28,18 +28,17 @@ const List = () => {
               <li>
                 <span>상품</span>
                 <span>레고 나홀로집에</span>
-                {/* {/ 상품이 뭔지 props로 받아서 가져와야한다 {props...}/} */}
+                {/* 상품이 뭔지 props로 받아서 가져와야한다 {props...}*/}
               </li>
               <li>
                 <span>가격</span>
                 <span>50,000</span>
-                {/* {/ 가격을 props로 받아서 가져와야한다 props... /} */}
+                {/* 가격을 props로 받아서 가져와야한다 props... */}
               </li>
             </ul>
           </div>
         </Link>
-        {/* {/ 이걸 컴포넌트로 할 필요가 있을까?*/}
-        <div></div>
+        {/* 이걸 컴포넌트로 할 필요가 있을까? */}
       </div>
     </div>
   );
