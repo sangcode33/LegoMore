@@ -17,9 +17,9 @@
 }
 
 .modal-put button {
-  border: 1px solid black;
+  border: 0 solid;
   margin: 5px;
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
 }
 

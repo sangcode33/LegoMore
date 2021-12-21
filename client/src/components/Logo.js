@@ -6,6 +6,7 @@ const Logo = styled.img`
   height: 90px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 5px;
 `;
 
 export default function LogoImage() {

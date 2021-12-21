@@ -34,6 +34,10 @@ function App() {
     isAuthenticated();
   };
 
+  const goLoginPage = () => {
+    navigate("/users/login");
+  };
+
   const handleLogout = () => {
     axios.get("http://localhost:4000/users/signout").then((res) => {
       setUserInfo(null);
@@ -50,16 +54,16 @@ function App() {
           element={
             isLogin ? (
               <>
-                <Header2 handleLogout={handleLogout} />
+                <Header2 handleLogout={handleLogout} userId={userInfo.id} />
                 <LogoImage />
-                <Nav />
+                {/* <Nav /> */}
                 <HeaderImage />
               </>
             ) : (
               <>
                 <Header1 />
                 <LogoImage />
-                <Nav />
+                {/* <Nav /> */}
                 <HeaderImage />
               </>
             )
@@ -77,7 +81,10 @@ function App() {
           path="/users/login"
           element={<Login handleResponseSuccess={handleResponseSuccess} />}
         ></Route>
-        <Route path="/users/signup" element={<Signup />}></Route>
+        <Route
+          path="/users/signup"
+          element={<Signup goLoginPage={goLoginPage} />}
+        ></Route>
         <Route path="/goods/goods" element={<List />}></Route>
       </Routes>
       <Footer />
