@@ -82,13 +82,13 @@ export default function Header() {
     <div>
       <Headerpart>
         <Link to="/goods/goods">
-          <GoodsList>goodslist</GoodsList>
+          <GoodsList>Goodslist</GoodsList>
         </Link>
         <Link to="/users/login">
-          <GoodsList>Login</GoodsList>
+          <GoodsList>LogIn</GoodsList>
         </Link>
         <Link to="/users/signup">
-          <GoodsList>Sign Up</GoodsList>
+          <GoodsList>SignUp</GoodsList>
         </Link>
         <div>
           <GoodsList onClick={openModalHandler}>상품등록</GoodsList>
