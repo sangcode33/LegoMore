@@ -7,13 +7,13 @@ module.exports = {
   signout: require("./users/signout"),
 
   // goods
-  upload: require("./goods/upload"),
+  goodsUpload: require("./goods/upload"),
   goods: require("./goods/goods"),
-  delete: require("./goods/delete"),
-  modify: require("./goods/modify"),
+  goodsDelete: require("./goods/delete"),
+  goodsModify: require("./goods/modify"),
 
   // comments
-  upload: require("./comments/upload"),
-  delete: require("./comments/delete"),
+  commentsUpload: require("./comments/upload"),
+  commentsDelete: require("./comments/delete"),
   comments: require("./comments/comments"),
 };

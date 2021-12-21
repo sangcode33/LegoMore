@@ -1,12 +1,15 @@
 const { user } = require("../../models");
+const { isAuthorized } = require("../tokenFunctions");
 
-module.exports = async (res, req) => {
+module.exports = async (req, res) => {
+  // console.log("Modify : ", req.body.value);
+
   if (req.body.value === "nickname") {
     await user.update(
       {
-        nickname: req.body.nickname,
+        nickname: req.body.nickname.nickname,
       },
-      { where: { id: req.body.id } }
+      { where: { id: req.body.userInfo.id } }
     );
     const userInfo = {
       id: req.body.id,
@@ -17,9 +20,9 @@ module.exports = async (res, req) => {
   } else if (req.body.value === "password") {
     await user.update(
       {
-        password: req.body.newPassword,
+        password: req.body.password.password,
       },
-      { where: { id: req.body.id } }
+      { where: { id: req.body.userInfo.id } }
     );
     const userInfo = {
       id: req.body.id,
