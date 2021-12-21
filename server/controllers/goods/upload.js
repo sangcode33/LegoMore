@@ -25,6 +25,9 @@ module.exports = async (req, res) => {
       status: req.body.status,
     });
     // 상품 성공에 성공하면 201 created
-    res.status(201).send({ message: "확인" });
+    res.status(201).send({
+      id: newGoods.id,
+      message: "확인",
+    });
   }
 };
