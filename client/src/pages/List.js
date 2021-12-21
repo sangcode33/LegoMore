@@ -1,4 +1,4 @@
-import Header2 from "../components/Header1";
+import Header2 from "../components/Header2";
 import LogoImage from "../components/Logo";
 import mockup2 from "../mockup/2.png";
 import mockup3 from "../mockup/3.png";

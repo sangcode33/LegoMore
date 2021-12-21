@@ -17,6 +17,7 @@ import axios from "axios";
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
+  const [accessToekn, setAccessToken] = useState("");
   const navigate = useNavigate();
   const isAuthenticated = () => {
     axios
@@ -30,7 +31,9 @@ function App() {
       });
   };
 
-  const handleResponseSuccess = () => {
+  const handleResponseSuccess = (data) => {
+    // console.log("App.js 37번줄 : ", data);
+    setAccessToken(data);
     isAuthenticated();
   };
 
@@ -72,7 +75,7 @@ function App() {
 
         <Route
           path="/users/mypage"
-          element={<MyPage userInfo={userInfo} />}
+          element={<MyPage userInfo={userInfo} accessToekn={accessToekn} />}
         ></Route>
 
         <Route path="/goods/detail" element={<Detail />}></Route>
@@ -85,6 +88,7 @@ function App() {
           path="/users/signup"
           element={<Signup goLoginPage={goLoginPage} />}
         ></Route>
+        {/* <Route path="/oauth/callback/kakao" element={<Kakao />}></Route> */}
         <Route path="/goods/goods" element={<List />}></Route>
       </Routes>
       <Footer />
