@@ -50,7 +50,7 @@ export default function Header(props) {
         <Link to="/users/mypage">
           <GoodsList>My Page</GoodsList>
         </Link>
-        {/* <GoodsList>상품등록</GoodsList> */}
+        <GoodsList>상품등록</GoodsList>
       </Headerpart>
     </div>
   );
