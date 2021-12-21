@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Upload from "./Upload";
 
 const GoodsList = styled.button`
   display: inline-flex;
@@ -43,14 +44,14 @@ export default function Header(props) {
   return (
     <div>
       <Headerpart>
-        <Link to="/goods/goods">
-          <GoodsList>goodslist</GoodsList>
+        <Link to="/goods/goods" style={{ textDecoration: "none" }}>
+          <GoodsList>상품리스트</GoodsList>
         </Link>
-        <GoodsList onClick={props.handleLogout}>Log Out</GoodsList>
-        <Link to="/users/mypage">
-          <GoodsList>My Page</GoodsList>
+        <GoodsList onClick={props.handleLogout}>로그아웃</GoodsList>
+        <Link to="/users/mypage" style={{ textDecoration: "none" }}>
+          <GoodsList>마이페이지</GoodsList>
         </Link>
-        <GoodsList>상품등록</GoodsList>
+        <Upload />
       </Headerpart>
     </div>
   );

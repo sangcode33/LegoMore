@@ -1,6 +1,5 @@
 import Header1 from "../components/Header1";
 import React, { useState } from "react";
-import Nav from "../components/Nav";
 import LogoImage from "../components/Logo";
 import axios from "axios";
 import "./Login.css";
@@ -75,7 +74,6 @@ const Login = ({ handleResponseSuccess }) => {
     <div>
       <Header1 />
       <LogoImage />
-      <Nav />
       <hr />
       <div className="login-main">
         <h1 className="login-title">로그인</h1>

@@ -1,6 +1,10 @@
+import axios from "axios";
+import { useState } from "react";
 import styled from "styled-components";
 import mockupimage from "../mockup/1.png";
 import "./Mypage.css";
+import Header2 from "../components/Header2";
+import LogoImage from "../components/Logo";
 
 const GoodsImg = styled.img`
   height: 90px;
@@ -8,25 +12,101 @@ const GoodsImg = styled.img`
   margin: 0 auto;
 `;
 
-export default function MyPage(props) {
+export default function MyPage({ userInfo, accessToken }) {
+  console.log("Mypage : ", userInfo.email);
+  const [nickname, setNickname] = useState(userInfo.nickname);
+  const [newPassword, setNewPassword] = useState("");
+
+  const handleInputValue = (key) => (e) => {
+    setNickname({ ...nickname, [key]: e.target.value });
+    setNewPassword({ ...newPassword, [key]: e.target.value });
+    // console.log(nickname);
+  };
+
+  const handleDelete = () => {
+    // console.log("회원탈퇴버튼누름");
+    axios
+      .delete(`http://localhost:4000/users/${userInfo.id}`, {
+        data: userInfo,
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log("여기서는 페이지 이동시켜주기");
+      });
+  };
+
+  const handleNicknameModify = () => {
+    console.log("닉네임수정 버튼");
+    axios
+      .put(`http://localhost:4000/users/${userInfo.id}`, {
+        userInfo: userInfo,
+        nickname: nickname,
+        value: "nickname",
+      })
+      .then((res) => {
+        console.log("닉네임수정");
+      });
+  };
+
+  const handlePasswordModify = () => {
+    console.log("패스워드수정 버튼");
+    axios
+      .put(`http://localhost:4000/users/${userInfo.id}`, {
+        userInfo: userInfo,
+        password: newPassword,
+        value: "password",
+      })
+      .then((res) => {
+        console.log("비밀번호 수정");
+      });
+  };
+
   return (
     //props로 가져오기. type적기
     <div>
-      <div className="bottomline">
-        <div>정보수정</div>
-        <input placeholder="email" type="email" readOnly></input>
-        <div>
-          <input type="text" placeholder="nickname"></input>
-          <button>수정</button>
-          <div>이미 사용중인 닉네임이 있습니다.</div>
+      <Header2 />
+      <LogoImage />
+      <div className="bottomline mypage">
+        <div className="myinfo-title">내 정보</div>
+
+        {/* 이메일-읽기전용 */}
+        <div className="myinfo">
+          <input
+            placeholder="email"
+            type="email"
+            readOnly
+            value={userInfo.email}
+          ></input>
         </div>
 
-        <input type="password" placeholder="current password"></input>
+        {/* 닉네임 */}
         <div>
-          <input type="password" placeholder="new password"></input>
-          <button>수정</button>
+          <div className="myinfo">
+            <input
+              type="text"
+              placeholder="nickname"
+              defaultValue={userInfo.nickname}
+              onChange={handleInputValue("nickname")}
+            ></input>
+          </div>
+          <span className="editbutton">
+            <button onClick={handleNicknameModify}>수정</button>
+          </span>
         </div>
-        <button>회원탈퇴</button>
+
+        {/* 새 패스워드 */}
+        <div className="editbutton">
+          <div className="myinfo">
+            <input
+              type="password"
+              placeholder="new password"
+              onChange={handleInputValue("password")}
+            ></input>
+          </div>
+          <button onClick={handlePasswordModify}>수정</button>
+        </div>
+
+        <button onClick={handleDelete}>회원탈퇴</button>
       </div>
 
       <div className="bottomline">

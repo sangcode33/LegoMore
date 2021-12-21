@@ -11,7 +11,6 @@ import Detail from "./pages/Detail.js";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import Signup from "./pages/Signup";
-import Upload from "./pages/Upload";
 import List from "./pages/List";
 import axios from "axios";
 
@@ -55,7 +54,7 @@ function App() {
           element={
             isLogin ? (
               <>
-                <Header2 handleLogout={handleLogout} />
+                <Header2 handleLogout={handleLogout} userId={userInfo.id} />
                 <LogoImage />
                 <Nav />
                 <HeaderImage />
@@ -86,7 +85,6 @@ function App() {
           path="/users/signup"
           element={<Signup goLoginPage={goLoginPage} />}
         ></Route>
-        <Route path="/goods/upload" element={<Upload />}></Route>
         <Route path="/goods/goods" element={<List />}></Route>
       </Routes>
       <Footer />
