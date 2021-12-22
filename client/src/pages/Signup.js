@@ -1,5 +1,4 @@
 import Header1 from "../components/Header1";
-import Nav from "../components/Nav";
 import LogoImage from "../components/Logo";
 import "./Signup.css";
 import axios from "axios";
@@ -21,8 +20,7 @@ const Signup = ({ goLoginPage }) => {
   };
 
   const emailCheck = (email) => {
-    let regExp =
-      /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+    let regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
     if (email === "") {
       setErrorEmailMessage();
       return false;
@@ -83,7 +81,6 @@ const Signup = ({ goLoginPage }) => {
     <div>
       <Header1 />
       <LogoImage />
-      <Nav />
       <hr />
       <div className="signup-main">
         <h1>회원가입</h1>
