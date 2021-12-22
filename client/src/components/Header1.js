@@ -40,11 +40,11 @@ const Headerpart = styled.header`
   height: auto;
 `;
 
-export default function Header() {
+export default function Header1() {
   return (
     <div>
       <Headerpart>
-        <Link to="/goods/goods" style={{ textDecoration: "none" }}>
+        <Link to="/users/login" style={{ textDecoration: "none" }}>
           <GoodsList>상품리스트</GoodsList>
         </Link>
         <Link to="/users/login" style={{ textDecoration: "none" }}>

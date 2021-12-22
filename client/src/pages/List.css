@@ -1,0 +1,39 @@
+.desc {
+  margin-top: 50px;
+}
+
+.desc-title {
+  width: 200px;
+  font-size: 16px;
+  letter-spacing: -0.02px;
+  color: #212529;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+.desc-price {
+  width: 200px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.desc-status {
+  font-size: 13px;
+  color: #212529;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+/* .contents:hover {
+  box-shadow: 0 80px 0 0 #fceb3e inset;
+  font-weight: bold;
+} */
