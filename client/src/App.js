@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import Signup from "./pages/Signup";
 import List from "./pages/List";
 import axios from "axios";
+import Kakao from "./components/Kakao";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -32,7 +33,6 @@ function App() {
   };
 
   const handleResponseSuccess = (data) => {
-    // console.log("App.js 37번줄 : ", data);
     setAccessToken(data);
     isAuthenticated();
   };
@@ -45,9 +45,15 @@ function App() {
     axios.get("http://localhost:4000/users/signout").then((res) => {
       setUserInfo("");
       setIsLogin(false);
-      alert("???? ?????!");
+      alert("???? ?????.");
       navigate("/");
     });
+  };
+
+  const LoginHanlder = (data) => {
+    setUserInfo(data);
+    console.log(userInfo);
+    setIsLogin(true);
   };
 
   return (
@@ -79,7 +85,7 @@ function App() {
           element={<MyPage userInfo={userInfo} accessToekn={accessToekn} />}
         ></Route>
 
-        <Route path="/goods/detail" element={<Detail />}></Route>
+        <Route path="/goods/detail/:id" element={<Detail />}></Route>
 
         <Route
           path="/users/login"
@@ -88,6 +94,10 @@ function App() {
         <Route
           path="/users/signup"
           element={<Signup goLoginPage={goLoginPage} />}
+        ></Route>
+        <Route
+          path="/oauth/callback/kakao"
+          element={<Kakao LoginHanlder={LoginHanlder} />}
         ></Route>
         <Route path="/goods/goods" element={<List />}></Route>
       </Routes>
