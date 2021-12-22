@@ -102,7 +102,7 @@ export default function Upload({ userId }) {
         })
         .then((res) => alert("상품등록이 완료되었습니다!"))
         .then((res) => {
-          navigate("/goods/goods");
+          navigate("/");
         });
     }
   };
@@ -164,10 +164,6 @@ export default function Upload({ userId }) {
             </ModalView>
           </ModalBackdrop>
         ) : null}
-
-        {/* <Link to="/goods/upload">
-          <GoodsList>상품등록</GoodsList>
-        </Link> */}
       </div>
     </div>
   );

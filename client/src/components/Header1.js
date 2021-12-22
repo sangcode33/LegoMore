@@ -45,15 +45,11 @@ export default function Header1() {
     <div>
       <Headerpart>
         <Link to="/users/login" style={{ textDecoration: "none" }}>
-          <GoodsList>상품리스트</GoodsList>
-        </Link>
-        <Link to="/users/login" style={{ textDecoration: "none" }}>
           <GoodsList>로그인</GoodsList>
         </Link>
         <Link to="/users/signup" style={{ textDecoration: "none" }}>
           <GoodsList>회원가입</GoodsList>
         </Link>
-
         <Link to="/users/login" style={{ textDecoration: "none" }}>
           <GoodsList>상품등록</GoodsList>
         </Link>
