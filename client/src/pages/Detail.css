@@ -36,7 +36,9 @@
 }
 
 .detail-title {
-  margin: 20px;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 15px;
   padding: 5px;
   width: 20%;
   height: 3em;

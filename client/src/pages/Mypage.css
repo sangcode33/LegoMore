@@ -7,8 +7,6 @@
 .mypage {
   text-align: center;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 .myinfo-title {
@@ -20,9 +18,19 @@
 }
 
 .myinfo input {
-  width: 20%;
+  width: 280px;
   height: 3em;
   margin: 10px;
+  border: solid 2px #f24826;
+  border-radius: 8px;
+  color: #f24826;
+}
+
+.myinfo1 input {
+  width: 280px;
+  height: 3em;
+  margin: 10px;
+  margin-left: 80px;
   border: solid 2px #f24826;
   border-radius: 8px;
   color: #f24826;
@@ -35,6 +43,16 @@
   border: solid 2px #f24826;
   border-radius: 8px;
   color: #f24826;
+}
+
+.edit-delete button {
+  width: 10%;
+  height: 3em;
+  margin: 20px;
+  color: #fff;
+  background-color: #f24826;
+  border-radius: 8px;
+  border: solid 2px #f24826;
 }
 
 .editbutton button {

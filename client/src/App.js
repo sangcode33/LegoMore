@@ -1,7 +1,6 @@
 import "./App.css";
 import Header1 from "./components/Header1";
 import Header2 from "./components/Header2";
-import Nav from "./components/Nav";
 import LogoImage from "./components/Logo";
 import HeaderImage from "./pages/Main";
 import Footer from "./components/Footer";
@@ -43,13 +42,9 @@ function App() {
 
   const handleLogout = () => {
     axios.get("http://localhost:4000/users/signout").then((res) => {
-      setUserInfo(""); //null로 하니까 Header2 props로 넘긴 userId가 null로된다.
+      setUserInfo("");
       setIsLogin(false);
-<<<<<<< HEAD
       alert("???? ?????.");
-=======
-      alert("로그아웃 되었습니다!");
->>>>>>> 039fde96b8c68332e3a38d60543c01b8be92c3da
       navigate("/");
     });
   };
@@ -70,20 +65,12 @@ function App() {
               <>
                 <Header2 handleLogout={handleLogout} userId={userInfo.id} />
                 <LogoImage />
-<<<<<<< HEAD
-                {/* <Nav /> */}
-=======
->>>>>>> 039fde96b8c68332e3a38d60543c01b8be92c3da
                 <HeaderImage />
               </>
             ) : (
               <>
                 <Header1 />
                 <LogoImage />
-<<<<<<< HEAD
-                {/* <Nav /> */}
-=======
->>>>>>> 039fde96b8c68332e3a38d60543c01b8be92c3da
                 <HeaderImage />
               </>
             )

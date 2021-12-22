@@ -108,7 +108,10 @@ const Login = ({ handleResponseSuccess }) => {
         <div className="sns-title">SNS 간편로그인</div>
         <div className="btn-kakao">
           <button>
-            <a href={KAKAO_AUTH_URL}> 카카오 로그인 → </a>
+            <a href={KAKAO_AUTH_URL} style={{ textDecoration: "none" }}>
+              {" "}
+              카카오 로그인 →{" "}
+            </a>
           </button>
         </div>
       </div>

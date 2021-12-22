@@ -40,12 +40,7 @@ const Headerpart = styled.header`
   height: auto;
 `;
 
-<<<<<<< Updated upstream
-export default function Header(props) {
-  console.log("headers2 : ", props);
-=======
 export default function Header2(props) {
->>>>>>> Stashed changes
   return (
     <div>
       <Headerpart>

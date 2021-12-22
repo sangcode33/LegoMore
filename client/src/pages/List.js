@@ -7,13 +7,8 @@ import mockup5 from "../mockup/5.png";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import axios from "axios";
-<<<<<<< HEAD
-import { useEffect, useState } from "react";
-
-=======
 import { useState, useEffect } from "react";
 import "./List.css";
->>>>>>> 039fde96b8c68332e3a38d60543c01b8be92c3da
 
 const GoodsImg = styled.img`
   height: 90px;

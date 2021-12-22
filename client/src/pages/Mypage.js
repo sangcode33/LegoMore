@@ -81,32 +81,34 @@ export default function MyPage({ userInfo, accessToken }) {
 
         {/* 닉네임 */}
         <div>
-          <div className="myinfo">
+          <span className="myinfo1">
             <input
               type="text"
               placeholder="nickname"
               defaultValue={userInfo.nickname}
               onChange={handleInputValue("nickname")}
             ></input>
-          </div>
+          </span>
           <span className="editbutton">
             <button onClick={handleNicknameModify}>수정</button>
           </span>
         </div>
 
         {/* 새 패스워드 */}
-        <div className="editbutton">
-          <div className="myinfo">
-            <input
-              type="password"
-              placeholder="new password"
-              onChange={handleInputValue("password")}
-            ></input>
-          </div>
-          <button onClick={handlePasswordModify}>수정</button>
-        </div>
 
-        <button onClick={handleDelete}>회원탈퇴</button>
+        <span className="myinfo1">
+          <input
+            type="password"
+            placeholder="new password"
+            onChange={handleInputValue("password")}
+          ></input>
+        </span>
+        <span className="editbutton">
+          <button onClick={handlePasswordModify}>수정</button>
+        </span>
+        <div className="edit-delete">
+          <button onClick={handleDelete}>회원탈퇴</button>
+        </div>
       </div>
 
       <div className="bottomline">
