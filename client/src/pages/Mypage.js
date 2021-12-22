@@ -5,6 +5,7 @@ import mockupimage from "../mockup/1.png";
 import "./Mypage.css";
 import Header2 from "../components/Header2";
 import LogoImage from "../components/Logo";
+import { useNavigate } from "react-router-dom";
 
 const GoodsImg = styled.img`
   height: 90px;
@@ -12,10 +13,12 @@ const GoodsImg = styled.img`
   margin: 0 auto;
 `;
 
-export default function MyPage({ userInfo, accessToken }) {
+export default function MyPage({ userInfo, handleLogout }) {
   console.log("Mypage : ", userInfo.email);
   const [nickname, setNickname] = useState(userInfo.nickname);
   const [newPassword, setNewPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleInputValue = (key) => (e) => {
     setNickname({ ...nickname, [key]: e.target.value });
@@ -32,6 +35,8 @@ export default function MyPage({ userInfo, accessToken }) {
       })
       .then((res) => {
         console.log("여기서는 페이지 이동시켜주기");
+        alert("너는 더이상 회원이 아니얏!");
+        navigate("/");
       });
   };
 
@@ -105,7 +110,7 @@ export default function MyPage({ userInfo, accessToken }) {
           </div>
           <button onClick={handlePasswordModify}>수정</button>
         </div>
-
+        <button onClick={handleLogout}>로그아웃</button>
         <button onClick={handleDelete}>회원탈퇴</button>
       </div>
 

@@ -40,19 +40,15 @@ const Headerpart = styled.header`
   height: auto;
 `;
 
-<<<<<<< Updated upstream
-export default function Header(props) {
-  console.log("headers2 : ", props);
-=======
 export default function Header2(props) {
->>>>>>> Stashed changes
+  console.log("headers2 : ", props);
+
   return (
     <div>
       <Headerpart>
-        <Link to="/goods/goods" style={{ textDecoration: "none" }}>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
           <GoodsList>상품리스트</GoodsList>
         </Link>
-        <GoodsList onClick={props.handleLogout}>로그아웃</GoodsList>
         <Link to="/users/mypage" style={{ textDecoration: "none" }}>
           <GoodsList>마이페이지</GoodsList>
         </Link>

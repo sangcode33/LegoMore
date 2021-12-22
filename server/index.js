@@ -27,11 +27,7 @@ app.get("/users/signout", controllers.signout);
 
 // Goods
 app.post("/goods/upload", controllers.goodsUpload);
-// 게시물 여러개 불러올때
-app.get("/goods/goods-auth", controllers.goods);
-// 게시물 하나를 불러올때
-app.get("/goods/:id", controllers.goodsDetail);
-
+app.get("/goods/:id", controllers.goods); // 게시물 하나만 불러올떄
 app.delete("/goods/:id", controllers.goodsDelete);
 app.put("/goods/:id", controllers.goodsModify);
 
@@ -39,9 +35,6 @@ app.put("/goods/:id", controllers.goodsModify);
 app.get("/comments/comments-auth", controllers.comments);
 app.post("/comments/upload", controllers.commentsUpload);
 app.delete("/comments/:id", controllers.commentsDelete);
-
-// oauth
-app.post("/oauth/kakao", controllers.kakao);
 
 module.exports = app.listen(port, () => {
   console.log(` Server is starting on ${port}`);
