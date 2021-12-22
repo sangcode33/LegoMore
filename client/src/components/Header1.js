@@ -40,7 +40,7 @@ const Headerpart = styled.header`
   height: auto;
 `;
 
-export default function Header() {
+export default function Header1() {
   return (
     <div>
       <Headerpart>
