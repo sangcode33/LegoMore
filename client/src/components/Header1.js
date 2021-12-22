@@ -44,7 +44,7 @@ export default function Header() {
   return (
     <div>
       <Headerpart>
-        <Link to="/goods/goods" style={{ textDecoration: "none" }}>
+        <Link to="/users/login" style={{ textDecoration: "none" }}>
           <GoodsList>상품리스트</GoodsList>
         </Link>
         <Link to="/users/login" style={{ textDecoration: "none" }}>

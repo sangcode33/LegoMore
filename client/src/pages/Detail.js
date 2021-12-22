@@ -1,4 +1,4 @@
-import Header2 from "../components/Header1";
+import Header2 from "../components/Header2";
 import LogoImage from "../components/Logo";
 import Nav from "../components/Nav";
 import React, { useState } from "react";

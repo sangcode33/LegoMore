@@ -125,6 +125,7 @@ export default function Upload({ userId }) {
                       <input
                         placeholder="사진업로드"
                         onChange={handleInputValue("image")}
+                        type="file"
                       ></input>
                     </div>
                     <div>

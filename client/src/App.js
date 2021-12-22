@@ -43,8 +43,9 @@ function App() {
 
   const handleLogout = () => {
     axios.get("http://localhost:4000/users/signout").then((res) => {
-      setUserInfo(null);
+      setUserInfo("");
       setIsLogin(false);
+      alert("???? ?????!");
       navigate("/");
     });
   };
@@ -88,10 +89,6 @@ function App() {
           path="/users/signup"
           element={<Signup goLoginPage={goLoginPage} />}
         ></Route>
-<<<<<<< HEAD
-=======
-        {/* <Route path="/oauth/callback/kakao" element={<Kakao />}></Route> */}
->>>>>>> 16c32d2ade0fca60b51a26ff4cd61d25d7ac6c55
         <Route path="/goods/goods" element={<List />}></Route>
       </Routes>
       <Footer />
