@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import Signup from "./pages/Signup";
 import List from "./pages/List";
 import axios from "axios";
+import Kakao from "./components/Kakao";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -43,10 +44,17 @@ function App() {
 
   const handleLogout = () => {
     axios.get("http://localhost:4000/users/signout").then((res) => {
-      setUserInfo(null);
+      setUserInfo("");
       setIsLogin(false);
+      alert("로그아웃 되었습니다.");
       navigate("/");
     });
+  };
+
+  const LoginHanlder = (data) => {
+    setUserInfo(data);
+    console.log(userInfo);
+    setIsLogin(true);
   };
 
   return (
@@ -78,7 +86,7 @@ function App() {
           element={<MyPage userInfo={userInfo} accessToekn={accessToekn} />}
         ></Route>
 
-        <Route path="/goods/detail" element={<Detail />}></Route>
+        <Route path="/goods/detail/:id" element={<Detail />}></Route>
 
         <Route
           path="/users/login"
@@ -88,7 +96,10 @@ function App() {
           path="/users/signup"
           element={<Signup goLoginPage={goLoginPage} />}
         ></Route>
-        {/* <Route path="/oauth/callback/kakao" element={<Kakao />}></Route> */}
+        <Route
+          path="/oauth/callback/kakao"
+          element={<Kakao LoginHanlder={LoginHanlder} />}
+        ></Route>
         <Route path="/goods/goods" element={<List />}></Route>
       </Routes>
       <Footer />
