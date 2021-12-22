@@ -11,9 +11,13 @@ module.exports = {
   goods: require("./goods/goods"),
   goodsDelete: require("./goods/delete"),
   goodsModify: require("./goods/modify"),
+  goodsDetail: require("./goods/detail"),
 
   // comments
   commentsUpload: require("./comments/upload"),
   commentsDelete: require("./comments/delete"),
   comments: require("./comments/comments"),
+
+  // oauth
+  kakao: require("./oauth/kakao"),
 };
