@@ -40,8 +40,12 @@ const Headerpart = styled.header`
   height: auto;
 `;
 
+<<<<<<< Updated upstream
 export default function Header(props) {
   console.log("headers2 : ", props);
+=======
+export default function Header2(props) {
+>>>>>>> Stashed changes
   return (
     <div>
       <Headerpart>
@@ -52,7 +56,7 @@ export default function Header(props) {
         <Link to="/users/mypage" style={{ textDecoration: "none" }}>
           <GoodsList>마이페이지</GoodsList>
         </Link>
-        <Upload />
+        <Upload userId={props.userId} />
       </Headerpart>
     </div>
   );
