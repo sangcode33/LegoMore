@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import mockupimage from "../mockup/1.png";
 import "./Mypage.css";
@@ -13,10 +13,11 @@ const GoodsImg = styled.img`
   margin: 0 auto;
 `;
 
-export default function MyPage({ userInfo, handleLogout }) {
-  console.log("Mypage : ", userInfo.email);
+export default function MyPage({ userInfo, accessToken, handleLogout }) {
+  // console.log("Mypage : ", userInfo.email);
   const [nickname, setNickname] = useState(userInfo.nickname);
   const [newPassword, setNewPassword] = useState("");
+  const [likesList, setLikesList] = useState([]);
 
   const navigate = useNavigate();
 
@@ -26,6 +27,12 @@ export default function MyPage({ userInfo, handleLogout }) {
     // console.log(nickname);
   };
 
+  useEffect(() => {
+    axios.get("http://localhost:4000/likes/auth").then((res) => {
+      console.log("Mypage : ", res);
+    });
+  }, []);
+
   const handleDelete = () => {
     // console.log("회원탈퇴버튼누름");
     axios
@@ -34,14 +41,14 @@ export default function MyPage({ userInfo, handleLogout }) {
         withCredentials: true,
       })
       .then((res) => {
-        console.log("여기서는 페이지 이동시켜주기");
+        // console.log("여기서는 페이지 이동시켜주기");
         alert("너는 더이상 회원이 아니얏!");
         navigate("/");
       });
   };
 
   const handleNicknameModify = () => {
-    console.log("닉네임수정 버튼");
+    // console.log("닉네임수정 버튼");
     axios
       .put(`http://localhost:4000/users/${userInfo.id}`, {
         userInfo: userInfo,
@@ -49,12 +56,12 @@ export default function MyPage({ userInfo, handleLogout }) {
         value: "nickname",
       })
       .then((res) => {
-        console.log("닉네임수정");
+        // console.log("닉네임수정");
       });
   };
 
   const handlePasswordModify = () => {
-    console.log("패스워드수정 버튼");
+    // console.log("패스워드수정 버튼");
     axios
       .put(`http://localhost:4000/users/${userInfo.id}`, {
         userInfo: userInfo,
@@ -62,7 +69,7 @@ export default function MyPage({ userInfo, handleLogout }) {
         value: "password",
       })
       .then((res) => {
-        console.log("비밀번호 수정");
+        // console.log("비밀번호 수정");
       });
   };
 
