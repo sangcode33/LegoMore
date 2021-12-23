@@ -43,6 +43,7 @@ function App() {
     axios.get("http://localhost:4000/users/signout").then((res) => {
       setUserInfo(""); //null로 하니까 Header2 props로 넘긴 userId가 null로된다.
       setIsLogin(false);
+      alert("로그아웃 되었습니다!");
       navigate("/");
     });
   };

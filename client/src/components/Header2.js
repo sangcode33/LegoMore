@@ -41,7 +41,7 @@ const Headerpart = styled.header`
 `;
 
 export default function Header2(props) {
-  console.log("headers2 : ", props);
+  // console.log("headers2 : ", props);
 
   return (
     <div>

@@ -18,6 +18,10 @@ module.exports = {
   commentsDelete: require("./comments/delete"),
   comments: require("./comments/comments"),
 
+  // likes
+  likesUpload: require("./likes/upload"),
+  likes: require("./likes/likes"),
+
   // oauth
   kakao: require("./oauth/kakao"),
 };
