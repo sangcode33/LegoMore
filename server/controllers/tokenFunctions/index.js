@@ -10,17 +10,17 @@ module.exports = {
   },
   sendAccessToken: (res, accessToken) => {
     return res
-      .cookie("jwt", accessToken, {
-        httpOnly: true,
-        sameSite: "none",
-        secure: true,
-      })
+      .cookie("jwt", accessToken)
       .status(200)
       .send({
+        data: {
+          accessToken: accessToken,
+        },
         message: "Ok",
       });
   },
   isAuthorized: (req) => {
+    // console.log("tokenFunctionIndex : ", req.cookies.jwt);
     const token = req.cookies.jwt;
     const userinfo = verify(
       token,

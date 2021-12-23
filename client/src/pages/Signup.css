@@ -1,0 +1,62 @@
+.error-message {
+  color: #f24826;
+}
+
+.signup-main {
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #f24826;
+  font-size: 20px;
+  margin: 40px;
+  font-weight: bold;
+}
+
+.signup-email input {
+  width: 20%;
+  height: 3em;
+  margin: 20px;
+  border: solid 2px #f24826;
+  border-radius: 8px;
+  color: #f24826;
+}
+
+.signup-password input {
+  width: 20%;
+  height: 3em;
+  margin: 20px;
+  border: solid 2px #f24826;
+  border-radius: 8px;
+  color: #f24826;
+}
+
+.signup-nickname input {
+  width: 20%;
+  height: 3em;
+  margin: 20px;
+  border: solid 2px #f24826;
+  border-radius: 8px;
+  color: #f24826;
+}
+.btn {
+  margin: 30px;
+}
+
+.btn button {
+  width: 10%;
+  height: 3em;
+  margin: 30px;
+  color: #f24826;
+  background-color: #fff;
+  border-radius: 8px;
+  border: solid 2px #f24826;
+}
+
+.btn button:hover {
+  box-shadow: 0 80px 0 0 #fceb3e inset;
+  font-weight: bold;
+}

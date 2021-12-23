@@ -1,14 +1,12 @@
 const { user } = require("../../models");
+const { isAuthorized } = require("../tokenFunctions");
 
-module.exports = (res, req) => {
-  const userInfo = user.destroy({
-    where: { id: 1 },
+module.exports = async (req, res) => {
+  // console.log("res.cookies : ", req.cookies);
+  // console.log("req.body : ", req.body);
+
+  await user.destroy({
+    where: { id: req.body.id },
   });
-
-  console.log(userInfo);
-
-  res
-    // .cookie("jwt", null, { maxAge: 0 })
-    .status(200)
-    .json({ id: 1 });
+  res.status(200).send({ message: "Delete Ok" });
 };

@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-decoration: none;
 }
 
 .App-link {
@@ -35,4 +36,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header {
+  justify-content: space-between;
+  background-color: #ffee58;
+}
+
+.nav {
+  justify-content: space-between;
+  background-color: #ffee58;
 }
