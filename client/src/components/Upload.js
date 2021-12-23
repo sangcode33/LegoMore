@@ -68,14 +68,13 @@ const ModalView = styled.div.attrs((props) => ({
 
 export default function Upload({ userId }) {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   const openModalHandler = () => {
     setIsOpen(!isOpen);
   };
-  const navigate = useNavigate();
 
   const [uploadInfo, setuploadInfo] = useState({
     userId: userId,
-    image: "",
     title: "",
     price: "",
     status: "",
@@ -117,49 +116,52 @@ export default function Upload({ userId }) {
                 &times;
               </span>
               <div className="desc">
-                <div>
+                <form id="imageForm">
                   <div>
                     <div>
-                      <span>상품사진</span>
-                      <div></div>
-                      <input
-                        placeholder="사진업로드"
-                        onChange={handleInputValue("image")}
-                        type="file"
-                      ></input>
+                      <div>
+                        <span>상품사진</span>
+                        <div></div>
+                        <input
+                          id="imageInput"
+                          accept="image/*"
+                          placeholder="사진업로드"
+                          type="file"
+                        ></input>
+                      </div>
+                      <div>
+                        <span>상품명</span>
+                        <input
+                          placeholder="상품이름을 적으세요."
+                          onChange={handleInputValue("title")}
+                        ></input>
+                      </div>
+                      <div>
+                        <span>가격</span>
+                        <input
+                          placeholder="희망 가격을 적으세요."
+                          onChange={handleInputValue("price")}
+                        ></input>
+                      </div>
+                      <div>
+                        <span>상태</span>
+                        <input
+                          placeholder="상,중,하 중 택1하세요."
+                          onChange={handleInputValue("status")}
+                        ></input>
+                      </div>
+                      <div>
+                        <span>상세설명</span>
+                        <input
+                          placeholder="추가 설명을 작성하세요."
+                          onChange={handleInputValue("content")}
+                        ></input>
+                      </div>
+                      <button type="submit">상품등록</button>
+                      <button>취소</button>
                     </div>
-                    <div>
-                      <span>상품명</span>
-                      <input
-                        placeholder="상품이름을 적으세요."
-                        onChange={handleInputValue("title")}
-                      ></input>
-                    </div>
-                    <div>
-                      <span>가격</span>
-                      <input
-                        placeholder="희망 가격을 적으세요."
-                        onChange={handleInputValue("price")}
-                      ></input>
-                    </div>
-                    <div>
-                      <span>상태</span>
-                      <input
-                        placeholder="상,중,하 중 택1하세요."
-                        onChange={handleInputValue("status")}
-                      ></input>
-                    </div>
-                    <div>
-                      <span>상세설명</span>
-                      <input
-                        placeholder="추가 설명을 작성하세요."
-                        onChange={handleInputValue("content")}
-                      ></input>
-                    </div>
-                    <button onClick={handleUpload}>상품등록</button>
-                    <button>취소</button>
                   </div>
-                </div>
+                </form>
               </div>
             </ModalView>
           </ModalBackdrop>

@@ -4,8 +4,9 @@ import React, { useEffect, useState } from "react";
 import "./Detail.css";
 import axios from "axios";
 
-const Detail = (props) => {
+const Detail = ({ userId }) => {
   // console.log(props.location);
+  let [modal, setModal] = useState(false);
   const code = new URL(window.location.href);
   let params = String(code.pathname.substring(14));
   // console.log(params);
@@ -26,8 +27,27 @@ const Detail = (props) => {
     });
   }, []);
 
-  let [modal, setModal] = useState(false);
-  // axios.get(`http://localhost:4000/goods/${}`)
+  const handleLike = () => {
+    console.log("Detail userId : ", userId);
+    axios
+      .post(
+        "http://localhost:4000/likes/upload",
+        {
+          userId: userId,
+          goodsId: goodsInfo.id,
+        },
+        {
+          withCredentials: true,
+        }
+      )
+      .then((res) => {
+        console.log("Detail Likes : ", res);
+      })
+      .catch((err) => {
+        alert("이미 목록에 존재합니다.");
+      });
+  };
+
   return (
     <div>
       <Header2 />
@@ -53,7 +73,7 @@ const Detail = (props) => {
           <div className="detail-title">{goodsInfo.content}</div>
         </div>
         <div className="detail-love">
-          <button>♥️찜하기</button>
+          <button onClick={handleLike}>♥️찜하기</button>
 
           <button
             onClick={() => {

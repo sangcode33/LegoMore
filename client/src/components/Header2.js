@@ -48,7 +48,7 @@ const Logo1 = styled.img`
 `;
 
 export default function Header2(props) {
-  console.log("headers2 : ", props);
+  // console.log("headers2 : ", props);
 
   return (
     <div>

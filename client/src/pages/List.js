@@ -1,9 +1,12 @@
 import Header2 from "../components/Header2";
 import LogoImage from "../components/Logo";
 import mockup2 from "../mockup/2.png";
+<<<<<<< HEAD
 import mockup3 from "../mockup/3.png";
 import mockup4 from "../mockup/4.png";
 import mockup5 from "../mockup/5.png";
+=======
+>>>>>>> 08bdd4f41750b5d90d1678190567a4c954accceb
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import axios from "axios";

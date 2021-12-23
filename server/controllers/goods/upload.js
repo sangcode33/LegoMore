@@ -3,6 +3,8 @@ const { isAuthorized } = require("../tokenFunctions");
 
 module.exports = async (req, res) => {
   // 인증
+
+  console.log("server upload : ", req);
   if (!isAuthorized(req)) {
     res.status(401).send({ message: "유효하지않은 토큰입니다." });
   } else if (
