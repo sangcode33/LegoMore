@@ -75,8 +75,6 @@ const Login = ({ handleResponseSuccess }) => {
   return (
     <div>
       <Header1 />
-      <LogoImage />
-      <hr />
       <div className="login-main">
         <h1 className="login-title">로그인</h1>
         <form onSubmit={(e) => e.preventDefault()}>

@@ -10,7 +10,6 @@ import Detail from "./pages/Detail.js";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import Signup from "./pages/Signup";
-import List from "./pages/List";
 import axios from "axios";
 import Kakao from "./components/Kakao";
 
@@ -64,26 +63,29 @@ function App() {
             isLogin ? (
               <>
                 <Header2 handleLogout={handleLogout} userId={userInfo.id} />
-                <LogoImage />
+
                 <HeaderImage />
               </>
             ) : (
               <>
                 <Header1 />
-                <LogoImage />
+
                 <HeaderImage />
               </>
             )
           }
         ></Route>
-
         <Route
           path="/users/mypage"
-          element={<MyPage userInfo={userInfo} accessToekn={accessToekn} />}
+          element={
+            <MyPage
+              userInfo={userInfo}
+              accessToekn={accessToekn}
+              handleLogout={handleLogout}
+            />
+          }
         ></Route>
-
         <Route path="/goods/detail/:id" element={<Detail />}></Route>
-
         <Route
           path="/users/login"
           element={<Login handleResponseSuccess={handleResponseSuccess} />}
@@ -96,7 +98,6 @@ function App() {
           path="/oauth/callback/kakao"
           element={<Kakao LoginHanlder={LoginHanlder} />}
         ></Route>
-        <Route path="/goods/goods" element={<List />}></Route>
       </Routes>
       <Footer />
     </div>

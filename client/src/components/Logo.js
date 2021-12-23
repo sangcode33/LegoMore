@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 const Logo = styled.img`
-  height: 90px;
+  height: 75px;
+  width: 200px;
   display: block;
   margin: 0 auto;
   margin-bottom: 5px;
 `;
 
-export default function LogoImage() {
+function LogoImage() {
   const navigate = useNavigate();
 
   const goMainpage = () => {
@@ -22,3 +23,5 @@ export default function LogoImage() {
     </div>
   );
 }
+
+export default LogoImage;

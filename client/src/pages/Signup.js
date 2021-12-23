@@ -80,8 +80,6 @@ const Signup = ({ goLoginPage }) => {
   return (
     <div>
       <Header1 />
-      <LogoImage />
-      <hr />
       <div className="signup-main">
         <h1>회원가입</h1>
         <form onSubmit={(e) => e.preventDefault()}>

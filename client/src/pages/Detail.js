@@ -1,6 +1,5 @@
 import Header2 from "../components/Header2";
 import LogoImage from "../components/Logo";
-import Nav from "../components/Nav";
 import React, { useEffect, useState } from "react";
 import "./Detail.css";
 import axios from "axios";
@@ -32,11 +31,7 @@ const Detail = (props) => {
   return (
     <div>
       <Header2 />
-      <LogoImage />
-      <Nav />
-
       {/* 이걸 컴포넌트로 할 필요가 있을까? */}
-      <hr />
       <div className="detail-main">
         <div className="detail-delete">
           <span>
