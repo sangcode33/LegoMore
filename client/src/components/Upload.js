@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./Upload.css";
+import nofileimage from "../images/nofileimage.png";
 
 const GoodsList = styled.button`
   //버튼 이름 바꾸자
@@ -66,6 +68,15 @@ const ModalView = styled.div.attrs((props) => ({
   }
 `;
 
+const NofileImg = styled.img`
+  height: 180px;
+  //display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: block;
+  margin: 0px auto;
+`;
+
 export default function Upload({ userId }) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
@@ -85,9 +96,12 @@ export default function Upload({ userId }) {
     setuploadInfo({ ...uploadInfo, [key]: e.target.value });
   };
 
+  const handleCancel = () => {
+    setIsOpen(!isOpen);
+  };
+
   const handleUpload = () => {
     if (
-      uploadInfo.image === "" ||
       uploadInfo.title === "" ||
       uploadInfo.price === "" ||
       uploadInfo.status === "" ||
@@ -95,11 +109,15 @@ export default function Upload({ userId }) {
     ) {
       alert("모든 항목을 입력해 주세요");
     } else {
+      uploadInfo.price = uploadInfo.price
+        .toString()
+        .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
       axios
         .post("http://localhost:4000/goods/upload", uploadInfo, {
           withCredentials: true,
         })
         .then((res) => alert("상품등록이 완료되었습니다!"))
+        .then(() => setIsOpen(!isOpen))
         .then((res) => {
           navigate("/");
         });
@@ -116,52 +134,53 @@ export default function Upload({ userId }) {
                 &times;
               </span>
               <div className="desc">
-                <form id="imageForm">
-                  <div>
-                    <div>
-                      <div>
-                        <span>상품사진</span>
-                        <div></div>
-                        <input
-                          id="imageInput"
-                          accept="image/*"
-                          placeholder="사진업로드"
-                          type="file"
-                        ></input>
-                      </div>
-                      <div>
-                        <span>상품명</span>
-                        <input
-                          placeholder="상품이름을 적으세요."
-                          onChange={handleInputValue("title")}
-                        ></input>
-                      </div>
-                      <div>
-                        <span>가격</span>
-                        <input
-                          placeholder="희망 가격을 적으세요."
-                          onChange={handleInputValue("price")}
-                        ></input>
-                      </div>
-                      <div>
-                        <span>상태</span>
-                        <input
-                          placeholder="상,중,하 중 택1하세요."
-                          onChange={handleInputValue("status")}
-                        ></input>
-                      </div>
-                      <div>
-                        <span>상세설명</span>
-                        <input
-                          placeholder="추가 설명을 작성하세요."
-                          onChange={handleInputValue("content")}
-                        ></input>
-                      </div>
-                      <button type="submit">상품등록</button>
-                      <button>취소</button>
-                    </div>
+                <div className="body-content">
+                  {/* 상품사진 */}
+                  <div className="image">
+                    <NofileImg src={nofileimage} alt="" />
                   </div>
-                </form>
+
+                  {/* 상품명*/}
+                  <div className="title">
+                    <span>상품명</span>
+                    <input
+                      placeholder="상품이름을 적으세요."
+                      onChange={handleInputValue("title")}
+                    ></input>
+                  </div>
+
+                  {/* 상품가격 */}
+                  <div className="price">
+                    <span>가격</span>
+                    <input
+                      placeholder="희망 가격을 적으세요."
+                      type="number"
+                      onChange={handleInputValue("price")}
+                    ></input>
+                  </div>
+
+                  {/* 상품상태 */}
+                  <div className="status">
+                    <span>상태</span>
+                    <input
+                      placeholder="상,중,하 중 택1하세요."
+                      onChange={handleInputValue("status")}
+                    ></input>
+                  </div>
+
+                  {/* 상세설명 */}
+                  <div className="content">
+                    <span>상세설명</span>
+                    <input
+                      placeholder="추가 설명을 작성하세요."
+                      onChange={handleInputValue("content")}
+                    ></input>
+                  </div>
+                  <div className="upload">
+                    <button onClick={handleUpload}>상품등록</button>
+                    <button onClick={handleCancel}>취소</button>
+                  </div>
+                </div>
               </div>
             </ModalView>
           </ModalBackdrop>

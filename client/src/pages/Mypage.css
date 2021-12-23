@@ -1,9 +1,12 @@
 .bottomline {
   border-bottom: 2px solid rgb(207, 204, 204);
 }
-/* .editbutton {
-  margin: 0px;
-} */
+.list {
+  float: left;
+  margin-right: 25px;
+  text-align: center;
+}
+
 .mypage {
   text-align: center;
   box-sizing: border-box;
@@ -65,7 +68,3 @@
   border-radius: 8px;
   border: solid 2px #f24826;
 }
-
-/* .btn button:hover {
-  color: #ffcf00;
-} */
