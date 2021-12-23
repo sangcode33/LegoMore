@@ -41,9 +41,9 @@ function App() {
 
   const handleLogout = () => {
     axios.get("http://localhost:4000/users/signout").then((res) => {
-      setUserInfo(""); //null로 하니까 Header2 props로 넘긴 userId가 null로된다.
+      setUserInfo("");
       setIsLogin(false);
-      alert("로그아웃 되었습니다!");
+      alert("???? ?????.");
       navigate("/");
     });
   };
@@ -63,13 +63,13 @@ function App() {
             isLogin ? (
               <>
                 <Header2 handleLogout={handleLogout} userId={userInfo.id} />
-                <LogoImage />
+
                 <HeaderImage />
               </>
             ) : (
               <>
                 <Header1 />
-                <LogoImage />
+
                 <HeaderImage />
               </>
             )

@@ -1,24 +1,26 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Upload from "./Upload";
+import logo from "../images/logo.png";
 
 const GoodsList = styled.button`
   display: inline-flex;
   outline: none;
   border: none;
-  border-radius: 4px;
-  color: black;
+  color: white;
   font-weight: bold;
   cursor: pointer;
-  padding-left: 1rem;
+  padding-top:2rem;
+  padding-left: 3rem;
   padding-right: 1rem;
+  background-color: #e50100
 
   /* 크기 */
   height: 2.25rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
 
   /* 색상 */
-  background: white;
+  background: #e50100;
   &:hover {
     color: #ffcf00;
   }
@@ -33,11 +35,16 @@ const GoodsList = styled.button`
 `;
 
 const Headerpart = styled.header`
-  margin: 20px;
-  background: white;
+  background-color: #e50100;
   display: flex;
-  justify-content: right;
   height: auto;
+  padding: 30px;
+`;
+
+const Logo1 = styled.img`
+  height: 75px;
+  width: 200px;
+  margin-left: 350px;
 `;
 
 export default function Header2(props) {
@@ -46,6 +53,9 @@ export default function Header2(props) {
   return (
     <div>
       <Headerpart>
+        <Link to="/" style={{ margin: "0 auto" }}>
+          <Logo1 src={logo} alt="logo" />
+        </Link>
         <Link to={"/"} style={{ textDecoration: "none" }}>
           <GoodsList>상품리스트</GoodsList>
         </Link>

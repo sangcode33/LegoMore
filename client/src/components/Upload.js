@@ -8,19 +8,19 @@ const GoodsList = styled.button`
   display: inline-flex;
   outline: none;
   border: none;
-  border-radius: 4px;
-  color: black;
+  color: white;
   font-weight: bold;
   cursor: pointer;
-  padding-left: 1rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
   padding-right: 1rem;
 
   /* 크기 */
   height: 2.25rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
 
   /* 색상 */
-  background: white;
+  background: #e50100;
   &:hover {
     color: #ffcf00;
   }
