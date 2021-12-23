@@ -77,7 +77,6 @@ export default function MyPage({ userInfo, accessToken, handleLogout }) {
     //props로 가져오기. type적기
     <div>
       <Header2 />
-      <LogoImage />
       <div className="bottomline mypage">
         <div className="myinfo-title">내 정보</div>
 
@@ -93,32 +92,35 @@ export default function MyPage({ userInfo, accessToken, handleLogout }) {
 
         {/* 닉네임 */}
         <div>
-          <div className="myinfo">
+          <span className="myinfo1">
             <input
               type="text"
               placeholder="nickname"
               defaultValue={userInfo.nickname}
               onChange={handleInputValue("nickname")}
             ></input>
-          </div>
+          </span>
           <span className="editbutton">
             <button onClick={handleNicknameModify}>수정</button>
           </span>
         </div>
 
         {/* 새 패스워드 */}
-        <div className="editbutton">
-          <div className="myinfo">
-            <input
-              type="password"
-              placeholder="new password"
-              onChange={handleInputValue("password")}
-            ></input>
-          </div>
+
+        <span className="myinfo1">
+          <input
+            type="password"
+            placeholder="new password"
+            onChange={handleInputValue("password")}
+          ></input>
+        </span>
+        <span className="editbutton">
           <button onClick={handlePasswordModify}>수정</button>
+        </span>
+        <div className="edit-delete">
+          <button onClick={handleDelete}>회원탈퇴</button>
+          <button onClick={handleLogout}>로그아웃</button>
         </div>
-        <button onClick={handleLogout}>로그아웃</button>
-        <button onClick={handleDelete}>회원탈퇴</button>
       </div>
 
       <div className="bottomline">

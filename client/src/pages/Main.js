@@ -17,7 +17,7 @@ const HeaderImage2 = styled.section`
   top: 100%;
   left: 0;
   width: 100%;
-  height: 20vh;
+  height: 40vh;
   background-size: cover;
 `;
 
@@ -26,14 +26,14 @@ const Image2 = styled.div`
   text-align: left;
 `;
 
-const Text2 = styled.h2`
+const Text2 = styled.h1`
   position: absolute;
   color: #040738;
-  width: 500px;
+  width: 400px;
   font-size: 40px;
   // transform: translate(30%, -1050%);
-  top: -180px;
-  left: 230px;
+  top: -230px;
+  left: 200px;
 `;
 
 const TextSmall = styled.div`
@@ -47,11 +47,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-content: normal;
   align-items: normal;
-  margin: 40px 80px;
+  margin: 40px;
   //background: yellow;
 `;
 
@@ -67,22 +66,22 @@ export const Goods = styled(Link)`
 export const Contents = styled.div`
   display: flex;
   flex-direction: column;
-  width: 90px;
-  height: 150px;
-  padding: 80px;
+  width: 220px;
+  height: 200px;
+  padding: 35px;
   margin-right: 30px;
-  margin-bottom: 56px;
+  margin-bottom: 30px;
   align-items: left;
   color: black;
   border-radius: 20px;
-  border: 4px dashed #bcbcbc;
+  border: 2px solid #040738;
 `;
 
 export const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: black;
+  color: white;
   font-weight: bold;
   font-size: xx-large;
   margin-top: 80px;
@@ -128,9 +127,9 @@ export default function HeaderImage() {
             >
               <Contents listId={list.id}>
                 <GoodsImg src={mockup2} alt="" />
-                <div>{list.title}</div>
-                <span>{list.price} 원</span>
-                <span>{list.status}</span>
+                <h3> {list.title}</h3>
+                <div>•가격: {list.price}원</div>
+                <div>•상태: {list.status}</div>
               </Contents>
             </Goods>
           </div>

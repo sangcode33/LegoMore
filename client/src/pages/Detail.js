@@ -51,9 +51,7 @@ const Detail = ({ userId }) => {
   return (
     <div>
       <Header2 />
-      <LogoImage />
       {/* 이걸 컴포넌트로 할 필요가 있을까? */}
-      <hr />
       <div className="detail-main">
         <div className="detail-delete">
           <span>
