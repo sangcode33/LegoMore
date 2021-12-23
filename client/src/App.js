@@ -43,7 +43,7 @@ function App() {
     axios.get("http://localhost:4000/users/signout").then((res) => {
       setUserInfo("");
       setIsLogin(false);
-      alert("???? ?????.");
+      alert("로그아웃이 되었습니다.");
       navigate("/");
     });
   };

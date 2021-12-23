@@ -10,7 +10,6 @@ module.exports = async (req, res) => {
   } else if (
     req.body.title === undefined ||
     req.body.content === undefined ||
-    req.body.image === undefined ||
     req.body.price === undefined ||
     req.body.status === undefined
   ) {
@@ -22,7 +21,6 @@ module.exports = async (req, res) => {
       userId: req.body.userId,
       title: req.body.title,
       content: req.body.content,
-      image: req.body.image,
       price: req.body.price,
       status: req.body.status,
     });

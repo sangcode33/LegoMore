@@ -4,12 +4,13 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import myImage2 from "../images/background2.jpeg";
+import nofileimage from "../images/nofileimage.png";
 
 const GoodsImg = styled.img`
-  height: 90px;
+  height: 120px;
   //display: block;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  //margin: 0 auto;
+  //margin-bottom: 20px;
 `;
 
 const HeaderImage2 = styled.section`
@@ -95,7 +96,7 @@ export default function HeaderImage() {
       //console.log(res.data.data);
       setData(res.data.data);
     });
-  }, []);
+  });
 
   return (
     <div>
@@ -126,7 +127,7 @@ export default function HeaderImage() {
               }}
             >
               <Contents listId={list.id}>
-                <GoodsImg src={mockup2} alt="" />
+                <GoodsImg src={nofileimage} alt="" />
                 <h3> {list.title}</h3>
                 <div>•가격: {list.price}원</div>
                 <div>•상태: {list.status}</div>

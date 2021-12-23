@@ -1,0 +1,138 @@
+.body-content {
+  width: 100%;
+  padding: 10px;
+}
+
+.title span {
+  width: 50px;
+  height: 5px;
+  margin: 10px;
+  border: solid 2px #f24826;
+  border-radius: 4px;
+  color: #f24826;
+  padding: 5px 10px;
+}
+
+.title input {
+  width: 50%;
+  height: 5px;
+  margin: 10px;
+  border: solid 2px #f24826;
+  border-radius: 4px;
+  color: #f24826;
+  padding: 11px;
+}
+
+/* .image span {
+    width: 50px;
+    height: 5px;
+    margin: 10px;
+    border: solid 2px #f24826;
+    border-radius: 4px;
+    color: #f24826;
+    padding: 5px 10px;
+  }
+  
+  .image input {
+    width: 70%;
+    height: 5px;
+    margin: 10px;
+    /* border: solid 2px #f24826; */
+/* border-radius: 4px; */
+/* color: #f24826;
+    padding: 20px;
+  } */
+
+.image {
+  width: 180px;
+  margin: 0px;
+}
+
+.price span {
+  width: 60px;
+  height: 5px;
+  margin: 10px;
+  border: solid 2px #f24826;
+  border-radius: 4px;
+  color: #f24826;
+  padding: 5px 10px;
+}
+
+.price input {
+  width: 50%;
+  height: 5px;
+  margin: 10px;
+  border: solid 2px #f24826;
+  border-radius: 4px;
+  color: #f24826;
+  padding: 11px;
+}
+
+::placeholder {
+  font-size: 15px;
+}
+
+.status span {
+  width: 50px;
+  height: 5px;
+  margin: 10px;
+  border: solid 2px #f24826;
+  border-radius: 4px;
+  color: #f24826;
+  padding: 5px 10px;
+}
+
+.status input {
+  width: 50%;
+  height: 5px;
+  margin: 10px;
+  border: solid 2px #f24826;
+  border-radius: 4px;
+  color: #f24826;
+  padding: 11px;
+}
+
+.content span {
+  width: 50px;
+  height: 5px;
+  margin: 10px;
+  border: solid 2px #f24826;
+  border-radius: 4px;
+  color: #f24826;
+  padding: 5px 10px;
+}
+
+.content input {
+  width: 50%;
+  height: 5px;
+  margin: 10px;
+  border: solid 2px #f24826;
+  border-radius: 4px;
+  color: #f24826;
+  padding: 11px;
+}
+
+.button button {
+  width: 20%;
+  height: 3em;
+  margin: 10px;
+  color: #f24826;
+  background-color: #fff;
+  border-radius: 8px;
+  border: solid 2px #f24826;
+}
+
+.button button:hover {
+  box-shadow: 0 80px 0 0 #fceb3e inset;
+  font-weight: bold;
+}
+
+.upload button {
+  width: 10%;
+  height: 3em;
+  margin: 20px;
+  color: #fff;
+  background-color: #f24826;
+  border-radius: 8px;
+  border: solid 2px #f24826;
+}
